@@ -3,7 +3,9 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListBarangController;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\StaffController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('contact', [HomeController::class, 'contact']);
@@ -22,6 +24,8 @@ Route::prefix('admin')->group(function (){
     });
 });
 
-Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'listbarang']); 
+Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'listbarang']);
+
+Route::get('/staff', [StaffController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'login']);

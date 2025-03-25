@@ -5,7 +5,9 @@ use App\Http\Controllers\ListBarangController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PubliController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminDashboardController;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -15,6 +17,11 @@ Route::get('contact', [HomeController::class, 'contact']);
 Route::get('/welcome/{nama}', function ($nama) {
     return "Selamat datang di halaman welcome " . $nama;
 });
+
+Route::get('/profile', [UserController::class, 'profile_page']);
+
+Route::get('/regis', [PubliController::class, 'register']);
+
 
 Route::prefix('admin')->group(function (){
     Route::get('/dashboard', function () {

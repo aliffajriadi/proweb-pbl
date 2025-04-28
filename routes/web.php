@@ -54,3 +54,12 @@ Route::get('/baranglist', function(){
     ];
     return view('list_product', compact('data'));
 });
+
+
+//P7
+Route::get('/homeku', function(){
+    return view('pages.home');
+});
+Route::get('/aboutku', function(){
+    return view('pages.about');
+});

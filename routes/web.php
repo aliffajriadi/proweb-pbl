@@ -9,6 +9,7 @@ use App\Http\Controllers\PubliController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('contact', [HomeController::class, 'contact']);
@@ -39,3 +40,8 @@ Route::get('/staff', [StaffController::class, 'index']);
 Route::get('/login', [LoginController::class, 'login']);
 
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'show']);
+Route::get('/product', [ProductController::class,'tampilkan']);
+
+Route::get('/publicdirectory', function(){
+    return view('imageStyle');
+});

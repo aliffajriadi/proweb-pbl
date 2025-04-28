@@ -45,3 +45,12 @@ Route::get('/product', [ProductController::class,'tampilkan']);
 Route::get('/publicdirectory', function(){
     return view('imageStyle');
 });
+
+Route::get('/baranglist', function(){
+    $data = [
+        ['id' => '1', 'nama' => 'Sampo', 'harga' => 3000],
+        ['id' => '2', 'nama' => 'Sabun Mandi', 'harga' => 4000],
+        ['id' => '3', 'nama' => 'Gosok Gigi', 'harga' => 3500],
+    ];
+    return view('list_product', compact('data'));
+});

@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListBarangController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StaffDashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PubliController;
 use App\Http\Controllers\StaffController;
@@ -40,6 +40,7 @@ Route::get('/staff', [StaffController::class, 'index']);
 Route::get('/login', [LoginController::class, 'login']);
 
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'show']);
+<<<<<<< HEAD
 Route::get('/product', [ProductController::class,'tampilkan']);
 
 Route::get('/publicdirectory', function(){
@@ -63,3 +64,15 @@ Route::get('/homeku', function(){
 Route::get('/aboutku', function(){
     return view('pages.about');
 });
+=======
+
+
+Route::get('/staff/dashboard', [StaffDashboardController::class, 'tampilkan']);
+Route::view('/admin/create-staff', 'admin-create-staff');
+>>>>>>> 15a675e (p4_dwiky-3312401086)
+<<<<<<< HEAD
+// Perubahan dari branch lokal
+=======
+// Perubahan dari remote
+>>>>>>> FETCH_HEAD
+Route::get('/admin/create-staff', [StaffController::class, 'tambahStaff']);

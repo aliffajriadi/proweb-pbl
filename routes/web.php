@@ -10,6 +10,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Product1Controller;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('contact', [HomeController::class, 'contact']);
@@ -33,6 +34,11 @@ Route::prefix('admin')->group(function (){
     });
 });
 
+Route::get('/wallpaper1', function (){
+    return view('wallpaper1');
+
+    });
+
 Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'listbarang']);
 
 Route::get('/staff', [StaffController::class, 'index']);
@@ -40,7 +46,6 @@ Route::get('/staff', [StaffController::class, 'index']);
 Route::get('/login', [LoginController::class, 'login']);
 
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'show']);
-<<<<<<< HEAD
 Route::get('/product', [ProductController::class,'tampilkan']);
 
 Route::get('/publicdirectory', function(){
@@ -64,15 +69,12 @@ Route::get('/homeku', function(){
 Route::get('/aboutku', function(){
     return view('pages.about');
 });
-=======
 
 
 Route::get('/staff/dashboard', [StaffDashboardController::class, 'tampilkan']);
 Route::view('/admin/create-staff', 'admin-create-staff');
->>>>>>> 15a675e (p4_dwiky-3312401086)
-<<<<<<< HEAD
-// Perubahan dari branch lokal
-=======
-// Perubahan dari remote
->>>>>>> FETCH_HEAD
+
+
 Route::get('/admin/create-staff', [StaffController::class, 'tambahStaff']);
+
+Route::get('/produk1/{id}/{produk}', [Product1Controller::class, 'show']);
